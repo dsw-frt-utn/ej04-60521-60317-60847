@@ -3,6 +3,7 @@ package views;
 import data.Persistencia;
 import domain.Vehiculo;
 import domain.VehiculoTipo;
+import domain.Sucursal;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
@@ -30,5 +31,12 @@ public class Controlador {
            }
         }
         return new double[] {consumoElectricos, consumoCombustible};
+    }
+    
+    public static ArrayList <Sucursal> getSucursales(){
+        return Persistencia.getSucursales();
+    }
+    public static void agregarVehiculo (Vehiculo vehiculo){
+        Persistencia.agregarVehiculo(vehiculo);
     }
 }
