@@ -251,7 +251,7 @@ public class AgregarVehiculoView extends javax.swing.JFrame {
          domain.Marca marca = new domain.Marca(nombreMarca, "A definir");
          
          int indiceSucursal = jComboBox3.getSelectedIndex();
-         domain.Sucursal sucursal = data.Persistencia.getSucursales().get(indiceSucursal);
+         domain.Sucursal sucursal = Controlador.getSucursales().get(indiceSucursal);
          
          domain.Vehiculo nuevoVehiculo = null;
          
@@ -269,7 +269,9 @@ public class AgregarVehiculoView extends javax.swing.JFrame {
              
          }
          if (nuevoVehiculo != null){
-             data.Persistencia.agregarVehiculo(nuevoVehiculo);
+             Controlador.agregarVehiculo(nuevoVehiculo);
+             javax.swing.JOptionPane.showMessageDialog(this, "¡Vehículo guardado exitosamente!");
+             
              ListarVehiculosView ventanaLista = new ListarVehiculosView();
              ventanaLista.setVisible(true);
              this.setVisible(false);
